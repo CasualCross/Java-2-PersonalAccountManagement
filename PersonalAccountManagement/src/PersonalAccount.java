@@ -21,7 +21,7 @@ public class PersonalAccount
             Amount newAmount = new Amount(amount, Amount.TransactionType.DEPOSIT);
             transactions.add(newAmount);
             balance += amount;
-            System.out.println("Deposit: " + amount);
+            System.out.println("Balance: " + balance);
         }
         else
         {
@@ -30,12 +30,12 @@ public class PersonalAccount
     }
     public void withdraw(double amount)
     {
-        if(amount <= balance)
+        if(amount <= balance && amount > 0)
         {
             Amount newAmount = new Amount(amount, Amount.TransactionType.WITHDRAWAL);
             transactions.add(newAmount);
             balance -= amount;
-            System.out.println("Withdraw: " + amount);
+            System.out.println("Balance: " + balance);
         }
         else
         {
